@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Grade Prediction</title>
+    </head>
+    <body>
+        <form method="POST">
+            {{ form.prediction_model.label }} : {{ form.prediction_model }}<br>
+            {{ form.age.label }} : {{ form.age }}<br>
+            {{ form.study_time.label}} : {{ form.study_time }}<br>
+            {{ form.failures.label }} : {{ form.failures }}<br>
+            {{ form.activities.label }} : {{ form.activities }}<br>
+            {{ form.higher_ed.label }} : {{ form.higher_ed }}<br>
+            {{ form.family_rel.label }} : {{ form.family_rel }}<br>
+            {{ form.free_time.label }} : {{ form.free_time }}<br>
+            {{ form.go_out.label }} : {{ form.go_out }}<br>
+            {{ form.absences.label }} : {{ form.absences }}<br>
+            {{ form.csrf_token }}
+            <input type="submit">
+        </form>
+    </body>
+</html>
