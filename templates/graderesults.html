@@ -2,8 +2,12 @@
 <html>
 <head>
 	<title>Grade Results</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
 </head>
 <body>
-<p> Predicted grade: {{ grade }}</p>
+	<div class="wrapper">
+		<p class="title"> Predicted grade: {{ grade }}</p>
+	</div>
 </body>
 </html>

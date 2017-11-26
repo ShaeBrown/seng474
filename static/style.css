@@ -1,0 +1,14 @@
+.wrapper {
+  margin: 0 auto;
+  width: 30%;
+}
+
+.title {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.formbody {
+  padding: 20px;
+  font-family: sans-serif;
+}

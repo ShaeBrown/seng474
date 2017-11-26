@@ -1,22 +1,31 @@
 <html>
-    <head>
-        <title>Grade Prediction</title>
-    </head>
-    <body>
+  <head>
+    <title>Grade Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        Secondary School Grades Prediction<br>
+      </div>
+      <div class="formbody">
         <form method="POST">
-            {{ form.prediction_model.label }} : {{ form.prediction_model }}<br>
-            {{ form.age.label }} : {{ form.age }}<br>
-            {{ form.study_time.label}} : {{ form.study_time }}<br>
-            {{ form.failures.label }} : {{ form.failures }}<br>
-            {{ form.activities.label }} : {{ form.activities }}<br>
-            {{ form.higher_ed.label }} : {{ form.higher_ed }}<br>
-            {{ form.family_rel.label }} : {{ form.family_rel }}<br>
-            {{ form.romantic_rel.label }} : {{ form.romantic_rel }}<br>
-            {{ form.free_time.label }} : {{ form.free_time }}<br>
-            {{ form.go_out.label }} : {{ form.go_out }}<br>
-            {{ form.absences.label }} : {{ form.absences }}<br>
-            {{ form.csrf_token }}
-            <input type="submit">
+          {{ form.prediction_model.label }} : {{ form.prediction_model }}<br>
+          {{ form.age.label }} : {{ form.age }}<br>
+          {{ form.study_time.label}} : {{ form.study_time }}<br>
+          {{ form.failures.label }} : {{ form.failures }}<br>
+          {{ form.activities.label }} : {{ form.activities }}<br>
+          {{ form.higher_ed.label }} : {{ form.higher_ed }}<br>
+          {{ form.family_rel.label }} : {{ form.family_rel }}<br>
+          {{ form.romantic_rel.label }} : {{ form.romantic_rel }}<br>
+          {{ form.free_time.label }} : {{ form.free_time }}<br>
+          {{ form.go_out.label }} : {{ form.go_out }}<br>
+          {{ form.absences.label }} : {{ form.absences }}<br>
+          {{ form.csrf_token }}
+          <input type="submit">
         </form>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
