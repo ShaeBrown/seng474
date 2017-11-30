@@ -3,11 +3,13 @@ from wtforms import IntegerField
 from wtforms import SelectField
 from wtforms import BooleanField
 from wtforms.validators import NumberRange
-from sklearn.tree import DecisionTreeClassifier
 
 class GradePredictionForm(FlaskForm):
     # TODO: should you have to fill in all inputs, some inputs , or at least one?
-    prediction_model = SelectField(u'Prediction Model', choices=[('0', 'Decision Tree'), ('1', 'Naive Bayes')])
+    prediction_model = SelectField(u'Prediction Model', choices=[('0', 'Decision Tree'),
+                                                                 ('1', 'Multinomial Bayes'),
+                                                                 ('2', 'Support Vector Machine'),
+                                                                 ('3', 'Multilayer Peceptron')])
     age = IntegerField('Age',  validators=[NumberRange(0,99)]) # TODO: adjust for min/max age?
     study_time = SelectField(u'Study Time', choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4')])
     #TODO set the value to what the numbers mean for example: ('1', '10-14 hrs')

@@ -4,7 +4,6 @@ from .forms import GradePredictionForm
 from flask import render_template
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
-from sklearn.naive_bayes import GaussianNB
 from sklearn.externals import joblib
 
 
@@ -15,8 +14,10 @@ csrf = CSRFProtect(app)
 
 def load_classifiers():
     dt = joblib.load("./trained_models/decisiontree.pkl")
-    # NB is not fitted and will throw error if chosen in the UI
-    return {0: dt, 1: GaussianNB()}
+    nb = joblib.load("./trained_models/multinomialbayes.pkl")
+    svm = joblib.load("./trained_models/svc.pkl")
+    mlp = joblib.load("./trained_models/mlp.pkl")
+    return {0: dt, 1: nb, 2: svm, 3: mlp}
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -37,6 +38,6 @@ def home():
         go_out = int(form.go_out.data)
         absences = int(form.absences.data)
         grade = clf.predict([[age, study_time, failures, activities, higher_ed, rom_rel, family_rel, free_time, go_out, absences]])[0]
-        label = {1 : "Failing", 2: "Passing", 3: "Good"}
+        label = {1: "Failing", 2: "Passing", 3: "Doing Well"}
         return render_template('graderesults.html', grade=label[int(grade)])
     return render_template('gradepredictionform.html', form=form)
